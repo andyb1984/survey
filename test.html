@@ -7,8 +7,7 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
-      padding: 10px;
+      margin: 20px 10px;
     }
     .container {
       max-width: 500px;
@@ -52,24 +51,33 @@
   <div class="container">
     <h1>Workplace Culture Survey</h1>
     <form action="https://script.google.com/macros/s/AKfycbzRrMnZ5AUl7BxGDeZkTUSIIUXloGglvE50VTX-IBgU0tXXQJQYV_n7OALTcjjK63d8AQ/exec" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Enter your name" required>
-      
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="Enter your email" required>
-      
-      <label for="age">Age:</label>
-      <input type="number" id="age" name="age" placeholder="Enter your age" required>
-      
-      <label for="gender">Gender:</label>
-      <select id="gender" name="gender">
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
-      </select>
       
       <div class="rating-section">
-        <label for="caring">Please rank from 1-5 (5 being the highest) how much you feel that relationships and mutual trust are prioritized in your workplace:</label>
+        <label for="tenure">How long have you been working at this company?</label>
+        <select id="tenure" name="tenure">
+          <option value="less_than_1_year">Less than 1 year</option>
+          <option value="1_2_years">1-2 years</option>
+          <option value="3_5_years">3-5 years</option>
+          <option value="6_10_years">6-10 years</option>
+          <option value="more_than_10_years">More than 10 years</option>
+        </select>
+      </div>
+
+      <div class="rating-section">
+        <label for="future_intentions">How likely are you to stay with the company for the next 2 years?</label>
+        <div class="rating-options">
+          <label><input type="radio" name="future_intentions" value="1"> Very unlikely</label>
+          <label><input type="radio" name="future_intentions" value="2"> Unlikely</label>
+          <label><input type="radio" name="future_intentions" value="3"> Neutral</label>
+          <label><input type="radio" name="future_intentions" value="4"> Likely</label>
+          <label><input type="radio" name="future_intentions" value="5"> Very likely</label>
+        </div>
+      </div>
+
+      <p>Please rank from 1-5 (5 being the highest) for each of the following questions:</p>
+
+      <div class="rating-section">
+        <label for="caring">Do you feel that relationships and mutual trust are prioritized in your workplace?</label>
         <div class="rating-options">
           <label><input type="radio" name="caring" value="1"> 1</label>
           <label><input type="radio" name="caring" value="2"> 2</label>
@@ -80,7 +88,7 @@
       </div>
 
       <div class="rating-section">
-        <label for="purpose">Please rank from 1-5 (5 being the highest) how much you believe that your workplace focuses on sustainability and contributing to global communities:</label>
+        <label for="purpose">Do you believe that your workplace focuses on sustainability and contributing to global communities?</label>
         <div class="rating-options">
           <label><input type="radio" name="purpose" value="1"> 1</label>
           <label><input type="radio" name="purpose" value="2"> 2</label>
@@ -91,7 +99,7 @@
       </div>
 
       <div class="rating-section">
-        <label for="learning">Please rank from 1-5 (5 being the highest) how strongly you feel that exploration, expansiveness, and creativity are emphasized in your workplace:</label>
+        <label for="learning">Is there a strong emphasis on exploration, expansiveness, and creativity in your workplace?</label>
         <div class="rating-options">
           <label><input type="radio" name="learning" value="1"> 1</label>
           <label><input type="radio" name="learning" value="2"> 2</label>
@@ -102,7 +110,7 @@
       </div>
 
       <div class="rating-section">
-        <label for="enjoyment">Please rank from 1-5 (5 being the highest) how much you find that fun and excitement are integral parts of your workplace culture:</label>
+        <label for="enjoyment">Do you find that fun and excitement are integral parts of your workplace culture?</label>
         <div class="rating-options">
           <label><input type="radio" name="enjoyment" value="1"> 1</label>
           <label><input type="radio" name="enjoyment" value="2"> 2</label>
@@ -113,7 +121,7 @@
       </div>
 
       <div class="rating-section">
-        <label for="results">Please rank from 1-5 (5 being the highest) how significant achieving goals and winning are in your workplace:</label>
+        <label for="results">Is achieving goals and winning a significant focus in your workplace?</label>
         <div class="rating-options">
           <label><input type="radio" name="results" value="1"> 1</label>
           <label><input type="radio" name="results" value="2"> 2</label>
@@ -124,7 +132,7 @@
       </div>
 
       <div class="rating-section">
-        <label for="authority">Please rank from 1-5 (5 being the highest) how much you feel that strength, decisiveness, and boldness are valued in your workplace:</label>
+        <label for="authority">Do you feel that strength, decisiveness, and boldness are valued in your workplace?</label>
         <div class="rating-options">
           <label><input type="radio" name="authority" value="1"> 1</label>
           <label><input type="radio" name="authority" value="2"> 2</label>
@@ -135,7 +143,7 @@
       </div>
 
       <div class="rating-section">
-        <label for="safety">Please rank from 1-5 (5 being the highest) how much planning, caution, and preparedness are emphasized in your workplace:</label>
+        <label for="safety">Is planning, caution, and preparedness emphasized in your workplace?</label>
         <div class="rating-options">
           <label><input type="radio" name="safety" value="1"> 1</label>
           <label><input type="radio" name="safety" value="2"> 2</label>
@@ -146,7 +154,7 @@
       </div>
 
       <div class="rating-section">
-        <label for="order">Please rank from 1-5 (5 being the highest) how crucial respect, structure, and shared norms are in your workplace culture:</label>
+        <label for="order">Do respect, structure, and shared norms play a crucial role in your workplace culture?</label>
         <div class="rating-options">
           <label><input type="radio" name="order" value="1"> 1</label>
           <label><input type="radio" name="order" value="2"> 2</label>
@@ -157,10 +165,4 @@
       </div>
 
       <label for="comments">Comments:</label>
-      <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments"></textarea>
-      
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</body>
-</html>
+      <textarea id="comments" name="comments" rows="4"
