@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workplace Culture Survey</title>
+</head>
+<body>
+    <h1>Workplace Culture Survey</h1>
+    <form>
+        <h2>Caring</h2>
+        <p>Relationships and mutual trust</p>
+        <label><input type="radio" name="caring" value="1"> Strongly Disagree</label><br>
+        <label><input type="radio" name="caring" value="2"> Disagree</label><br>
+        <label><input type="radio" name="caring" value="3"> Neutral</label><br>
+        <label><input type="radio" name="caring" value="4"> Agree</label><br>
+        <label><input type="radio" name="caring" value="5"> Strongly Agree</label><br>
+
+        <h2>Purpose</h2>
+        <p>Idealism and altruism</p>
+        <label><input type="radio" name="purpose" value="1"> Strongly Disagree</label><br>
+        <label><input type="radio" name="purpose" value="2"> Disagree</label><br>
+        <label><input type="radio" name="purpose" value="3"> Neutral</label><br>
+        <label><input type="radio" name="purpose" value="4"> Agree</label><br>
+        <label><input type="radio" name="purpose" value="5"> Strongly Agree</label><br>
+
+        <h2>Learning</h2>
+        <p>Exploration, expansiveness, and creativity</p>
+        <label><input type="radio" name="learning" value="1"> Strongly Disagree</label><br>
+        <label><input type="radio" name="learning" value="2"> Disagree</label><br>
+        <label><input type="radio" name="learning" value="3"> Neutral</label><br>
+        <label><input type="radio" name="learning" value="4"> Agree</label><br>
+        <label><input type="radio" name="learning" value="5"> Strongly Agree</label><br>
+
+        <h2>Enjoyment</h2>
+        <p>Fun and excitement</p>
+        <label><input type="radio" name="enjoyment" value="1"> Strongly Disagree</label><br>
+        <label><input type="radio" name="enjoyment" value="2"> Disagree</label><br>
+        <label><input type="radio" name="enjoyment" value="3"> Neutral</label><br>
+        <label><input type="radio" name="enjoyment" value="4"> Agree</label><br>
+        <label><input type="radio" name="enjoyment" value="5"> Strongly Agree</label><br>
+
+        <h2>Results</h2>
+        <p>Achievement and winning</p>
+        <label><input type="radio" name="results" value="1"> Strongly Disagree</label><br>
+        <label><input type="radio" name="results" value="2"> Disagree</label><br>
+        <label><input type="radio" name="results" value="3"> Neutral</label><br>
+        <label><input type="radio" name="results" value="4"> Agree</label><br>
+        <label><input type="radio" name="results" value="5"> Strongly Agree</label><br>
+
+        <h2>Authority</h2>
+        <p>Strength, decisiveness, and boldness</p>
+        <label><input type="radio" name="authority" value="1"> Strongly Disagree</label><br>
+        <label><input type="radio" name="authority" value="2"> Disagree</label><br>
+        <label><input type="radio" name="authority" value="3"> Neutral</label><br>
+        <label><input type="radio" name="authority" value="4"> Agree</label><br>
+        <label><input type="radio" name="authority" value="5"> Strongly Agree</label><br>
+
+        <h2>Safety</h2>
+        <p>Planning, caution, and preparedness</p>
+        <label><input type="radio" name="safety" value="1"> Strongly Disagree</label><br>
+        <label><input type="radio" name="safety" value="2"> Disagree</label><br>
+        <label><input type="radio" name="safety" value="3"> Neutral</label><br>
+        <label><input type="radio" name="safety" value="4"> Agree</label><br>
+        <label><input type="radio" name="safety" value="5"> Strongly Agree</label><br>
+
+        <h2>Order</h2>
+        <p>Respect, structure, and shared norms</p>
+        <label><input type="radio" name="order" value="1"> Strongly Disagree</label><br>
+        <label><input type="radio" name="order" value="2"> Disagree</label><br>
+        <label><input type="radio" name="order" value="3"> Neutral</label><br>
+        <label><input type="radio" name="order" value="4"> Agree</label><br>
+        <label><input type="radio" name="order" value="5"> Strongly Agree</label><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
