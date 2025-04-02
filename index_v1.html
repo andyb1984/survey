@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Survey with Ratings</title>
+  <title>Simple Survey</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -24,19 +24,6 @@
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 5px;
-    }
-    .rating-section {
-      margin-bottom: 20px;
-    }
-    .rating-section label {
-      font-weight: bold;
-    }
-    .rating-options {
-      display: flex;
-      justify-content: space-between;
-    }
-    .rating-options input {
-      width: auto;
     }
     button {
       background-color: #007bff;
@@ -68,28 +55,6 @@
         <option value="other">Other</option>
       </select>
       
-      <div class="rating-section">
-        <label for="service-rating">Rate our service (1 to 5):</label>
-        <div class="rating-options">
-          <label><input type="radio" name="service-rating" value="1"> 1</label>
-          <label><input type="radio" name="service-rating" value="2"> 2</label>
-          <label><input type="radio" name="service-rating" value="3"> 3</label>
-          <label><input type="radio" name="service-rating" value="4"> 4</label>
-          <label><input type="radio" name="service-rating" value="5"> 5</label>
-        </div>
-      </div>
-
-      <div class="rating-section">
-        <label for="experience-rating">Rate your experience (1 to 5):</label>
-        <div class="rating-options">
-          <label><input type="radio" name="experience-rating" value="1"> 1</label>
-          <label><input type="radio" name="experience-rating" value="2"> 2</label>
-          <label><input type="radio" name="experience-rating" value="3"> 3</label>
-          <label><input type="radio" name="experience-rating" value="4"> 4</label>
-          <label><input type="radio" name="experience-rating" value="5"> 5</label>
-        </div>
-      </div>
-
       <label for="comments">Comments:</label>
       <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments"></textarea>
       
