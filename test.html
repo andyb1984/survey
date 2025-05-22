@@ -2,167 +2,205 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>INPEX Survey</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 40px;
+      margin: 20px 10px;
     }
-    h1, h2 {
-      color: #003366;
-    }
-    .section {
-      margin-bottom: 30px;
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
     }
     label {
       display: block;
-      margin-top: 10px;
+      margin: 8px 0 5px;
     }
-    .question {
-      margin: 20px 0 10px;
-      font-weight: bold;
-    }
-    textarea, input[type="email"] {
+    input, select, textarea, button {
       width: 100%;
-      padding: 8px;
-      margin-top: 8px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-    .submit-btn {
-      margin-top: 30px;
-      padding: 10px 20px;
-      font-size: 16px;
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
     }
   </style>
 </head>
 <body>
-
-  <h1>Survey Participation Agreement</h1>
-  <p>By completing this survey, you agree to have your responses included in an academic study investigating the relationship between the INPEX Europe office and INPEX Corporation.</p>
-  <ul>
-    <li>The survey results will be treated anonymously, but due to a small sample size, absolute anonymity cannot be guaranteed.</li>
-    <li>You can choose whether or not to answer any questions; only answer those you are comfortable with.</li>
-    <li>Your participation is greatly appreciated and will contribute valuable insights to the research.</li>
-    <li><a href="#">Click here</a> if you would like to know more about the research and reasons for the questioning.</li>
-  </ul>
-
-  <form>
-    <!-- Section 1 -->
-    <div class="section">
+  <div class="container">
+    <h1>INPEX Survey Participation</h1>
+    <p>By completing this survey, you agree to have your responses included in an academic study investigating the relationship between the INPEX Europe office and INPEX Corporation.</p>
+    <ul>
+      <li>The survey results will be treated anonymously, but due to a small sample size, absolute anonymity cannot be guaranteed.</li>
+      <li>You may choose not to answer any question; answer only what you are comfortable with.</li>
+      <li>Your participation is greatly appreciated and will contribute valuable insights to the research.</li>
+      <li>If you would like to know more about the research and the reasons for the questions, <a href="#">click here</a>.</li>
+    </ul>
+    <form action="#" method="post">
       <h2>Section 1: Background Information</h2>
 
-      <div class="question">1. What is your role within the organization?</div>
-      <label><input type="radio" name="role" value="Senior Management"> Senior Management</label>
-      <label><input type="radio" name="role" value="Middle Management"> Middle Management</label>
-      <label><input type="radio" name="role" value="Functional Staff"> Functional Staff</label>
-      <label><input type="radio" name="role" value="Support Staff"> Support Staff</label>
-      <label><input type="radio" name="role" value="Other"> Other</label>
+      <label for="role">1. What is your role within the organization?</label>
+      <select id="role" name="role">
+        <option value=""></option>
+        <option>Senior Management</option>
+        <option>Middle Management</option>
+        <option>Functional Staff</option>
+        <option>Support Staff</option>
+        <option>Other</option>
+      </select>
 
-      <div class="question">2. How long have you been working for the company?</div>
-      <label><input type="radio" name="tenure" value="Less than 1 year"> Less than 1 year</label>
-      <label><input type="radio" name="tenure" value="1-2 years"> 1–2 years</label>
-      <label><input type="radio" name="tenure" value="3-5 years"> 3–5 years</label>
-      <label><input type="radio" name="tenure" value="6-10 years"> 6–10 years</label>
-      <label><input type="radio" name="tenure" value="More than 10 years"> More than 10 years</label>
+      <label for="tenure">2. How long have you been working for the company?</label>
+      <select id="tenure" name="tenure">
+        <option value=""></option>
+        <option>Less than 1 year</option>
+        <option>1-2 years</option>
+        <option>3-5 years</option>
+        <option>6-10 years</option>
+        <option>More than 10 years</option>
+      </select>
 
-      <div class="question">3. Are you an expatriate (expat) or a local employee?</div>
-      <label><input type="radio" name="expat" value="Expat"> Expat</label>
-      <label><input type="radio" name="expat" value="Local employee"> Local employee</label>
+      <label for="employee_type">3. Are you an expatriate (expat) or a local employee?</label>
+      <select id="employee_type" name="employee_type">
+        <option value=""></option>
+        <option>Expat</option>
+        <option>Local employee</option>
+      </select>
 
-      <div class="question">4. Where are you based?</div>
-      <label><input type="radio" name="location" value="London office"> London office</label>
-      <label><input type="radio" name="location" value="Tokyo HQ"> Tokyo HQ</label>
-      <label><input type="radio" name="location" value="Another subsidiary"> Another subsidiary (please specify): <input type="text" name="subsidiary"></label>
+      <label for="location">4. Where are you based?</label>
+      <select id="location" name="location">
+        <option value=""></option>
+        <option>London office</option>
+        <option>Tokyo Headquarters (HQ)</option>
+        <option>Another subsidiary</option>
+      </select>
+      <input type="text" name="other_location" placeholder="If another subsidiary, please specify">
 
-      <div class="question">5. What is your nationality?</div>
-      <label><input type="radio" name="nationality" value="Japanese"> Japanese</label>
-      <label><input type="radio" name="nationality" value="Australian"> Australian</label>
-      <label><input type="radio" name="nationality" value="Indonesian"> Indonesian</label>
-      <label><input type="radio" name="nationality" value="Norwegian"> Norwegian</label>
-      <label><input type="radio" name="nationality" value="British"> United Kingdom (British)</label>
-      <label><input type="radio" name="nationality" value="Other"> Other</label>
+      <label for="nationality">5. What is your nationality?</label>
+      <select id="nationality" name="nationality">
+        <option value=""></option>
+        <option>Japanese</option>
+        <option>Australian</option>
+        <option>Indonesian</option>
+        <option>Norwegian</option>
+        <option>United Kingdom (British)</option>
+        <option>Other</option>
+      </select>
 
-      <div class="question">6. How likely are you to stay with the company for the next 2 years?</div>
-      <label><input type="radio" name="stay_likelihood" value="Very unlikely"> Very unlikely</label>
-      <label><input type="radio" name="stay_likelihood" value="Unlikely"> Unlikely</label>
-      <label><input type="radio" name="stay_likelihood" value="Neutral"> Neutral</label>
-      <label><input type="radio" name="stay_likelihood" value="Likely"> Likely</label>
-      <label><input type="radio" name="stay_likelihood" value="Very likely"> Very likely</label>
-    </div>
+      <label for="future">6. How likely are you to stay with the company for the next 2 years?</label>
+      <select id="future" name="future">
+        <option value=""></option>
+        <option>Very unlikely</option>
+        <option>Unlikely</option>
+        <option>Neutral</option>
+        <option>Likely</option>
+        <option>Very likely</option>
+      </select>
 
-    <!-- Section 2 -->
-    <div class="section">
       <h2>Section 2: Organisational Culture</h2>
+      <label>8. Do you feel that relationships and mutual trust are prioritized in your workplace?</label>
+      <select name="q8">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <!-- Questions 8 to 15 -->
-      <div class="question">8. Do you feel that relationships and mutual trust are prioritized in your workplace?</div>
-      <label><input type="radio" name="q8" value="Yes"> Yes</label>
-      <label><input type="radio" name="q8" value="No"> No</label>
+      <label>9. Do you believe that your workplace focuses on sustainability and contributing to global communities?</label>
+      <select name="q9">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">9. Do you believe that your workplace focuses on sustainability and contributing to global communities?</div>
-      <label><input type="radio" name="q9" value="Yes"> Yes</label>
-      <label><input type="radio" name="q9" value="No"> No</label>
+      <label>10. Is there a strong emphasis on exploration, expansiveness, and creativity in your workplace?</label>
+      <select name="q10">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">10. Is there a strong emphasis on exploration, expansiveness, and creativity in your workplace?</div>
-      <label><input type="radio" name="q10" value="Yes"> Yes</label>
-      <label><input type="radio" name="q10" value="No"> No</label>
+      <label>11. Do you find that fun and excitement are integral parts of your workplace culture?</label>
+      <select name="q11">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">11. Do you find that fun and excitement are integral parts of your workplace culture?</div>
-      <label><input type="radio" name="q11" value="Yes"> Yes</label>
-      <label><input type="radio" name="q11" value="No"> No</label>
+      <label>12. Is achieving goals and winning a significant focus in your workplace?</label>
+      <select name="q12">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">12. Is achieving goals and winning a significant focus in your workplace?</div>
-      <label><input type="radio" name="q12" value="Yes"> Yes</label>
-      <label><input type="radio" name="q12" value="No"> No</label>
+      <label>13. Do you feel that strength, decisiveness, and boldness are valued in your workplace?</label>
+      <select name="q13">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">13. Do you feel that strength, decisiveness, and boldness are valued in your workplace?</div>
-      <label><input type="radio" name="q13" value="Yes"> Yes</label>
-      <label><input type="radio" name="q13" value="No"> No</label>
+      <label>14. Is planning, caution, and preparedness emphasized in your workplace?</label>
+      <select name="q14">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">14. Is planning, caution, and preparedness emphasized in your workplace?</div>
-      <label><input type="radio" name="q14" value="Yes"> Yes</label>
-      <label><input type="radio" name="q14" value="No"> No</label>
+      <label>15. Do respect, structure, and shared norms play a crucial role in your workplace culture?</label>
+      <select name="q15">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">15. Do respect, structure, and shared norms play a crucial role in your workplace culture?</div>
-      <label><input type="radio" name="q15" value="Yes"> Yes</label>
-      <label><input type="radio" name="q15" value="No"> No</label>
-    </div>
-
-    <!-- Section 3 -->
-    <div class="section">
       <h2>Section 3: Management Style</h2>
+      <label>16. Do you think the organization relies heavily on formal chains of command for decision-making?</label>
+      <select name="q16">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">16. Do you think the organization relies heavily on formal chains of command for decision-making?</div>
-      <label><input type="radio" name="q16" value="Yes"> Yes</label>
-      <label><input type="radio" name="q16" value="No"> No</label>
+      <label>17. Do you feel strategic decisions come from Tokyo HQ (as opposed to being derived by a subsidiary)?</label>
+      <select name="q17">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">17. Do you feel strategic decisions come from Tokyo HQ (as opposed to being derived by a subsidiary)?</div>
-      <label><input type="radio" name="q17" value="Yes"> Yes</label>
-      <label><input type="radio" name="q17" value="No"> No</label>
-    </div>
-
-    <!-- Section 4 -->
-    <div class="section">
       <h2>Section 4: Corporate Vision and Values</h2>
+      <label>18. Are you clearly aware of the organisation’s vision and core values?</label>
+      <select name="q18">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">18. Are you clearly aware of the organisation’s vision and core values?</div>
-      <label><input type="radio" name="q18" value="Yes"> Yes</label>
-      <label><input type="radio" name="q18" value="No"> No</label>
+      <label>19. Do the organisation’s vision and values significantly influence your day-to-day activities or decision-making?</label>
+      <select name="q19">
+        <option value=""></option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
 
-      <div class="question">19. Do the organisation’s vision and values significantly influence your day-to-day activities or decision-making?</div>
-      <label><input type="radio" name="q19" value="Yes"> Yes</label>
-      <label><input type="radio" name="q19" value="No"> No</label>
+      <label for="comments">Comments (optional):</label>
+      <textarea id="comments" name="comments" rows="4"></textarea>
 
-      <div class="question">Comments (optional):</div>
-      <textarea name="comments" rows="4" placeholder="Add any thoughts or comments here..."></textarea>
+      <label for="email">Email (optional):</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email (optional)">
 
-      <div class="question">Email (optional):</div>
-      <input type="email" name="email" placeholder="you@example.com">
-    </div>
+      <button type="submit">Submit</button>
+    </form>
 
-    <p>Thank you. If you have any thoughts, comments, or questions about this research or would like to discuss anything, please contact me at: <a href="mailto:Andrew.botsford@inpex.co.jp">Andrew.botsford@inpex.co.jp</a></p>
-
-    <button class="submit-btn" type="submit">Submit Survey</button>
-  </form>
-
+    <p>Thank you, if you have any thoughts, comments, or questions about this research or would just like to discuss anything - please contact me at: <a href="mailto:Andrew.botsford@inpex.co.jp">Andrew.botsford@inpex.co.jp</a></p>
+  </div>
 </body>
 </html>
