@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>INPEX Europe Survey</title>
   <style>
     body {
@@ -16,7 +16,7 @@
     label {
       display: block;
       margin: 8px 0 5px;
-      font-weight: bold;
+      font-weight: normal; /* Unbold labels */
     }
     input, select, textarea, button {
       width: 100%;
@@ -33,42 +33,23 @@
     button:hover {
       background-color: #0056b3;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
 <div class="container">
-  <h1>INPEX Europe Office & Organisation Survey</h1>
+  <h1>INPEX Europe Office & Corporation Survey</h1>
 
-  <h2>Purpose of the Survey</h2>
-  <p>
-    This survey is part of an academic study aimed at exploring the organisational culture, management style, and alignment with corporate vision and values within INPEX Europe and its relationship with INPEX Corporation. The research seeks to understand how employees across different roles, locations, and cultural backgrounds perceive and engage with the company’s strategic direction and workplace environment.
-  </p>
-  <p>Specifically, the survey investigates:</p>
-  <ul>
-    <li>Awareness and influence of INPEX’s vision and core values on employees’ daily work.</li>
-    <li>Perceptions of organisational culture, using Groysberg et al.’s (2018) framework of eight cultural styles (e.g., caring, purpose, learning, enjoyment, results, authority, safety, and order).</li>
-    <li>Differences in perception based on role seniority, tenure, expatriate status, and nationality.</li>
-    <li>The degree of autonomy perceived in decision-making processes, particularly between the Tokyo HQ and its subsidiaries.</li>
-    <li>Cultural classification of the London office and how it aligns with or diverges from the broader corporate culture.</li>
-  </ul>
-  <p>
-    The findings aim to provide insights into how effectively INPEX’s corporate values are communicated and embodied across its international offices, and how this alignment may relate to employee satisfaction and retention.
-  </p>
+  <p>This survey is part of an academic study aimed at exploring the organisational culture, management style, and alignment with corporate vision and values within INPEX Europe and its relationship with INPEX Corporation.</p>
 
-  <h2>Survey Participation Agreement</h2>
-  <ul>
-    <li>By completing this survey, you agree to have your responses included in an academic study investigating the relationship between the INPEX Europe office and INPEX Corporation.</li>
-    <li>Your entries will be treated anonymously, but please bear in mind that due to a small sample size of respondents, absolute anonymity cannot be guaranteed.</li>
-    <li>You can choose whether to answer any questions; do not feel obliged to answer all and only answer those you are comfortable with.</li>
-    <li>Your participation is greatly appreciated and will contribute valuable insights to the research.</li>
-  </ul>
-
-  <form action="https://script.google.com/macros/s/AKfycbz7Z7B6KOzB0mFyofLDeWV6AqAR3lXoQXHz4Dysn6KOcHz-ZZUJEkTfYud1VZlcI2OcgA/exec" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+  <form action="https://script.google.com/macros/s/AKfycbz7Z7B6KOzB0mFyofLDeWV6AqAR3lXoQXHz4Dysn6KOcHz-ZZUJEkTfYud1VZlcI2OcgA/exec" method="post" target="hidden_iframe" onsubmit="prepareSubmission(); submitted=true;">
 
     <h3>Section 1: Background Information</h3>
 
     <label for="role">What is your role within the organisation?</label>
-    <select id="role" name="role">
+    <select id="role" name="role" onchange="toggleOtherField(this, 'role_other')">
       <option value="">Select</option>
       <option>Senior Management (e.g., VP, CEO, CFO, Director)</option>
       <option>Middle Management (e.g., Manager)</option>
@@ -76,7 +57,7 @@
       <option>Support Staff (e.g., Secretary, Office Assistant)</option>
       <option>Other</option>
     </select>
-    <textarea name="role_other" rows="2" placeholder="If 'Other', please specify"></textarea>
+    <input type="text" id="role_other" class="hidden" placeholder="Please specify your role" />
 
     <label for="tenure">How long have you been working for the company?</label>
     <select id="tenure" name="tenure">
@@ -96,16 +77,16 @@
     </select>
 
     <label for="location">Where are you based?</label>
-    <select id="location" name="location">
+    <select id="location" name="location" onchange="toggleOtherField(this, 'location_other')">
       <option value="">Select</option>
       <option>London office</option>
       <option>Tokyo Headquarters (HQ)</option>
-      <option>Another subsidiary</option>
+      <option>Other</option>
     </select>
-    <textarea name="location_other" rows="2" placeholder="If 'Another subsidiary', please specify"></textarea>
+    <input type="text" id="location_other" class="hidden" placeholder="Please specify your location" />
 
     <label for="nationality">What is your nationality?</label>
-    <select id="nationality" name="nationality">
+    <select id="nationality" name="nationality" onchange="toggleOtherField(this, 'nationality_other')">
       <option value="">Select</option>
       <option>Japanese</option>
       <option>Australian</option>
@@ -114,7 +95,7 @@
       <option>United Kingdom (British)</option>
       <option>Other</option>
     </select>
-    <textarea name="nationality_other" rows="2" placeholder="If 'Other', please specify"></textarea>
+    <input type="text" id="nationality_other" class="hidden" placeholder="Please specify your nationality" />
 
     <label for="stay">How likely are you to stay with the company for the next 2 years?</label>
     <select id="stay" name="stay">
@@ -226,8 +207,40 @@
   </form>
 
   <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.href='https://andyb1984.github.io/survey/thankyou.html'; }"></iframe>
+
   <script>
     var submitted = false;
+
+    function toggleOtherField(selectEl, inputId) {
+      const input = document.getElementById(inputId);
+      if (selectEl.value === 'Other') {
+        input.classList.remove('hidden');
+      } else {
+        input.classList.add('hidden');
+      }
+    }
+
+    function prepareSubmission() {
+      const mappings = [
+        { selectId: 'role', otherId: 'role_other' },
+        { selectId: 'location', otherId: 'location_other' },
+        { selectId: 'nationality', otherId: 'nationality_other' }
+      ];
+
+      mappings.forEach(({ selectId, otherId }) => {
+        const select = document.getElementById(selectId);
+        const other = document.getElementById(otherId);
+        if (select.value === 'Other' && other.value.trim() !== '') {
+          // Replace select value with custom input
+          const hiddenInput = document.createElement('input');
+          hiddenInput.type = 'hidden';
+          hiddenInput.name = select.name;
+          hiddenInput.value = other.value;
+          select.parentNode.appendChild(hiddenInput);
+          select.disabled = true;
+        }
+      });
+    }
   </script>
 
   <p>Thank you. If you have any thoughts, comments, or questions about this research or would just like to discuss anything, please contact me at: <strong>Andrew.botsford@inpex.co.jp</strong></p>
