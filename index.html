@@ -1,0 +1,177 @@
+<!-- Updated INPEX Europe Survey Form -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INPEX Europe Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px 10px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin: 8px 0 5px;
+      font-weight: bold;
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>INPEX Europe Office & Corporation Survey</h1>
+
+  <h2>Purpose of the Survey</h2>
+  <p>
+    This survey is part of an academic study aimed at exploring the organisational culture, management style, and alignment with corporate vision and values within INPEX Europe and its relationship with INPEX Corporation.
+  </p>
+
+  <h2>Survey Participation Agreement</h2>
+  <ul>
+    <li>By completing this survey, you agree to have your responses included in an academic study investigating the relationship between the INPEX Europe office and INPEX Corporation.</li>
+    <li>Your entries will be treated anonymously. However, due to a small sample size, absolute anonymity cannot be guaranteed.</li>
+    <li>You can choose whether to answer any questions. Please only answer those you are comfortable with.</li>
+  </ul>
+
+  <form action="https://script.google.com/macros/s/AKfycbz7Z7B6KOzB0mFyofLDeWV6AqAR3lXoQXHz4Dysn6KOcHz-ZZUJEkTfYud1VZlcI2OcgA/exec" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+
+    <h3>Section 1: Background Information</h3>
+
+    <label for="role">What is your role within the organization?</label>
+    <select id="role" name="role">
+      <option value="">Select</option>
+      <option>Senior Management (e.g., VP, CEO, CFO, Director)</option>
+      <option>Middle Management (e.g., Manager)</option>
+      <option>Functional Staff (e.g., Technical, Financial)</option>
+      <option>Support Staff (e.g., Secretary, Office Assistant)</option>
+      <option>Other</option>
+    </select>
+    <input type="text" name="role_other" placeholder="If Other, please specify">
+
+    <label for="tenure">How long have you been working for the company?</label>
+    <select id="tenure" name="tenure">
+      <option value="">Select</option>
+      <option>Less than 1 year</option>
+      <option>1-2 years</option>
+      <option>3-5 years</option>
+      <option>6-10 years</option>
+      <option>More than 10 years</option>
+    </select>
+
+    <label for="expat">Are you an expatriate (expat) or a local employee?</label>
+    <select id="expat" name="expat">
+      <option value="">Select</option>
+      <option>Expat</option>
+      <option>Local employee</option>
+    </select>
+
+    <label for="location">Where are you based?</label>
+    <select id="location" name="location">
+      <option value="">Select</option>
+      <option>London office</option>
+      <option>Tokyo Headquarters (HQ)</option>
+      <option>Another subsidiary</option>
+    </select>
+    <input type="text" name="location_other" placeholder="If Another subsidiary, please specify">
+
+    <label for="nationality">What is your nationality?</label>
+    <select id="nationality" name="nationality">
+      <option value="">Select</option>
+      <option>Japanese</option>
+      <option>Australian</option>
+      <option>Indonesian</option>
+      <option>Norwegian</option>
+      <option>United Kingdom (British)</option>
+      <option>Other</option>
+    </select>
+    <input type="text" name="nationality_other" placeholder="If Other, please specify">
+
+    <label for="stay">How likely are you to stay with the company for the next 2 years?</label>
+    <select id="stay" name="stay">
+      <option value="">Select</option>
+      <option>Very unlikely</option>
+      <option>Unlikely</option>
+      <option>Neutral</option>
+      <option>Likely</option>
+      <option>Very likely</option>
+    </select>
+
+    <h3>Section 2: Organisational Culture</h3>
+    <!-- All existing culture questions remain unchanged -->
+
+    <label>Do you feel that relationships and mutual trust are prioritized in your workplace?</label>
+    <select name="trust">
+      <option value="">Select</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <!-- (same for sustainability, creativity, etc. ...) -->
+
+    <h3>Section 3: Management Style</h3>
+
+    <label>Do you think the organisation relies heavily on formal chains of command for decision-making?</label>
+    <select name="formal_chain">
+      <option value="">Select</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <label>Do you feel strategic decisions come from Tokyo HQ (as opposed to being derived by a subsidiary)?</label>
+    <select name="tokyo_decisions">
+      <option value="">Select</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <h3>Section 4: Corporate Vision and Values</h3>
+
+    <label>Are you clearly aware of the organisation’s vision and core values?</label>
+    <select name="vision_awareness">
+      <option value="">Select</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <label>Do the organisation’s vision and values significantly influence your day-to-day activities or decision-making?</label>
+    <select name="vision_influence">
+      <option value="">Select</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <label for="comments">Comments (optional):</label>
+    <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments (optional)"></textarea>
+
+    <label for="email">Email (optional):</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email (optional)">
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.href='https://andyb1984.github.io/survey/thankyou.html'; }"></iframe>
+  <script>var submitted = false;</script>
+
+  <p>Thank you. If you have any thoughts, comments, or questions about this research, please contact me at: <strong>Andrew.botsford@inpex.co.jp</strong></p>
+</div>
+</body>
+</html>
