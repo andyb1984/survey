@@ -8,30 +8,44 @@
         body {
             background-image: url('IMG_0001.JPG');
             background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: white;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         .message {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 30px;
+            border-radius: 12px;
             text-align: center;
+            max-width: 700px;
         }
         h1 {
             font-size: 2em;
-            margin: 0;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 10px 0 0;
+        }
+        .contact {
+            margin-top: 20px;
+            font-style: italic;
         }
     </style>
 </head>
 <body>
     <div class="message">
         <h1>Thank you for completing the survey!</h1>
+        <p>If you have any thoughts, comments, or questions about this research or would just like to discuss anything, please contact me at:</p>
+        <p class="contact">Andrew.botsford@inpex.co.jp</p>
     </div>
 </body>
 </html>
