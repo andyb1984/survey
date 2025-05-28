@@ -1,52 +1,51 @@
-
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>INPEXヨーロッパ調査</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px 10px;
-    }
-    .container {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    label {
-      display: block;
-      margin: 8px 0 5px;
-      font-weight: normal; /* ラベルの太字を解除 */
-    }
-    input, select, textarea, button {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
-    }
-    .hidden {
-      display: none;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INPEXヨーロッパ調査</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px 10px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin: 8px 0 5px;
+      font-weight: normal; /* Unbold labels */
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 <body>
 <div class="container">
-  <h1>INPEXヨーロッパオフィス＆コーポレーション調査</h1>
-  <p><a href="https://andyb1984.github.io/survey/index.html">Click here for the English version of the survey</a></p>
-  <!-- アンケートの目的（ドロップダウン） -->
+  <h1>INPEXヨーロッパオフィス＆コーポレーション調査</h1>
+<p><a href="https://andyb1984.github.io/survey/index.html">Click here for the English version of the survey</a></p>
+  <!-- Survey Purpose (Dropdown) -->
 <details>
-  <summary><strong>このアンケートの目的を読むにはこちらをクリックしてください</strong></summary>
-  <p>
+  <summary><strong>このアンケートの目的を読むにはこちらをクリックしてください</strong></summary>
+ <p>
     このアンケートは、INPEXヨーロッパにおける組織文化、マネジメントスタイル、企業ビジョンおよび価値観との整合性を探る学術研究の一環です。本調査は、さまざまな役職、勤務地、文化的背景を持つ従業員が、企業の戦略的方向性や職場環境をどのように認識し、関与しているかを理解することを目的としています。
   </p>
   <p>
@@ -65,7 +64,6 @@
 </details>
 
 <br>
-
 
 <!-- アンケート参加同意書 -->
 <h2>アンケート参加同意書</h2>
@@ -243,7 +241,8 @@
   <option value="4">4 - 多くが発信されている</option>
   <option value="5">5 - 完全に発信されている</option>
 </select>
-
+   
+    
 <h3>セクション4：企業ビジョンと価値観</h3>
 
 <label>企業のビジョンとコアバリューをどの程度明確に認識していますか？</label>
@@ -282,41 +281,42 @@
 <button type="submit">送信</button>
 </form>
 
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.href='https://andyb1984.github.io/survey/thankyou.html'; }"></iframe>
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.href='https://andyb1984.github.io/survey/thankyou.html'; }"></iframe>
 
-<script>
-  var submitted = false;
+  <script>
+    var submitted = false;
 
-  function toggleOtherField(selectEl, inputId) {
-    const input = document.getElementById(inputId);
-    if (selectEl.value === 'Other') {
-      input.classList.remove('hidden');
-    } else {
-      input.classList.add('hidden');
-    }
-  }
+    function toggleOtherField(selectEl, inputId) {
+      const input = document.getElementById(inputId);
+      if (selectEl.value === 'Other') {
+        input.classList.remove('hidden');
+      } else {
+        input.classList.add('hidden');
+      }
+    }
 
-  function prepareSubmission() {
-    const mappings = [
-      { selectId: 'role', otherId: 'role_other' },
-      { selectId: 'location', otherId: 'location_other' },
-      { selectId: 'nationality', otherId: 'nationality_other' }
-    ];
+    function prepareSubmission() {
+      const mappings = [
+        { selectId: 'role', otherId: 'role_other' },
+        { selectId: 'location', otherId: 'location_other' },
+        { selectId: 'nationality', otherId: 'nationality_other' }
+      ];
 
-    mappings.forEach(({ selectId, otherId }) => {
-      const select = document.getElementById(selectId);
-      const other = document.getElementById(otherId);
-      if (select.value === 'Other' && other.value.trim() !== '') {
-        const hiddenInput = document.createElement('input');
-        hiddenInput.type = 'hidden';
-        hiddenInput.name = select.name;
-        hiddenInput.value = other.value;
-        select.parentNode.appendChild(hiddenInput);
-        select.disabled = true;
-      }
-    });
-  }
-</script>
+      mappings.forEach(({ selectId, otherId }) => {
+        const select = document.getElementById(selectId);
+        const other = document.getElementById(otherId);
+        if (select.value === 'Other' && other.value.trim() !== '') {
+          // Replace select value with custom input
+          const hiddenInput = document.createElement('input');
+          hiddenInput.type = 'hidden';
+          hiddenInput.name = select.name;
+          hiddenInput.value = other.value;
+          select.parentNode.appendChild(hiddenInput);
+          select.disabled = true;
+        }
+      });
+    }
+  </script>
 
 <p>ありがとうございました。本研究に関してご意見・ご質問・ご感想などがございましたら、または何かお話しされたいことがあれば、以下のメールアドレスまでご連絡ください：<strong>Andrew.botsford@inpex.co.jp</strong></p>
 </div>
