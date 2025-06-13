@@ -1,0 +1,320 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>INPEX Europe Survey</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px 10px;
+    }
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    label {
+      display: block;
+      margin: 8px 0 5px;
+      font-weight: normal; /* Unbold labels */
+    }
+    input, select, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>INPEX Europe Office & Corporation Survey</h1>
+<p><a href="https://andyb1984.github.io/survey/index_jp.html">アンケートの日本語版はこちらをクリックしてください</a></p>
+  <!-- Survey Purpose (Dropdown) -->
+<details>
+  <summary><strong>Click here to read the purpose of this survey</strong></summary>
+  <p>
+    This survey is part of an academic study aimed at exploring the organisational culture, management style, and alignment with corporate vision and values within INPEX Europe and its relationship with INPEX Corporation. The research seeks to understand how employees across different roles, locations, and cultural backgrounds perceive and engage with the company’s strategic direction and workplace environment.
+  </p>
+  <p>
+    Specifically, the survey investigates:
+  </p>
+  <ul>
+    <li>Awareness and influence of INPEX’s vision and core values on employees’ daily work.</li>
+    <li>Perceptions of organisational culture, using Groysberg et al.’s (2018) framework of eight cultural styles (e.g., caring, purpose, learning, enjoyment, results, authority, safety, and order).</li>
+    <li>Differences in perception based on role seniority, tenure, expatriate status, and nationality.</li>
+    <li>The degree of autonomy perceived in decision-making processes, particularly between the Tokyo HQ and its subsidiaries.</li>
+    <li>Cultural classification of the London office and how it aligns with or diverges from the broader corporate culture.</li>
+  </ul>
+  <p>
+    The findings aim to provide insights into how effectively INPEX’s corporate values are communicated and embodied across its international offices, and how this alignment may relate to employee satisfaction and retention.
+  </p>
+</details>
+
+<br>
+
+<!-- Survey Participation Agreement -->
+<h2>Survey Participation Agreement</h2>
+<ul>
+  <li>By completing this survey, you agree to have your responses included in an academic study investigating the relationship between the INPEX Europe office and INPEX Corporation.</li>
+  <li>Your entries will be treated anonymously, but please bear in mind that due to a small sample size of respondents, absolute anonymity cannot be guaranteed.</li>
+  <li>You can choose whether to answer any questions; do not feel obliged to answer all and only answer those you are comfortable with.</li>
+  <li>Your participation is greatly appreciated and will contribute valuable insights to the research.</li>
+</ul>
+
+  <form action="https://script.google.com/macros/s/AKfycbx3BipP19YYEbbevN1yg-fK-gQVPm9zRyCTgZisuqDkm65xnhkXWxdLH-NKpkAOyyYQLw/exec" method="post" target="hidden_iframe" onsubmit="prepareSubmission(); submitted=true;">
+
+    <h3>Section 1: Background Information</h3>
+
+    <label for="role">What is your role within the organisation?</label>
+    <select id="role" name="role" onchange="toggleOtherField(this, 'role_other')">
+      <option value="">Select</option>
+      <option>Senior Management (e.g., VP, CEO, CFO, Director)</option>
+      <option>Middle Management (e.g., Manager)</option>
+      <option>Functional Staff (e.g., Technical, Financial)</option>
+      <option>Support Staff (e.g., Secretary, Office Assistant)</option>
+      <option>Other</option>
+    </select>
+    <input type="text" id="role_other" class="hidden" placeholder="Please specify your role" />
+
+    <label for="tenure">How long have you been working for the company?</label>
+    <select id="tenure" name="tenure">
+      <option value="">Select</option>
+      <option>Less than 1 year</option>
+      <option>1-2 years</option>
+      <option>3-5 years</option>
+      <option>6-10 years</option>
+      <option>More than 10 years</option>
+    </select>
+
+    <label for="expat">Are you an expatriate (expat) or a local employee?</label>
+    <select id="expat" name="expat">
+      <option value="">Select</option>
+      <option>Expat</option>
+      <option>Local Employee</option>
+    </select>
+
+    <label for="location">Where are you based?</label>
+    <select id="location" name="location" onchange="toggleOtherField(this, 'location_other')">
+      <option value="">Select</option>
+      <option>London office</option>
+      <option>Tokyo Headquarters (HQ)</option>
+      <option>Other</option>
+    </select>
+    <input type="text" id="location_other" class="hidden" placeholder="Please specify your location" />
+
+    <label for="stay">To what extent do you believe your current role at IEL/INPEX supports long-term career growth and development?</label>
+    <select id="stay" name="stay">
+      <option value="">Select</option>
+      <option>Strongly Disagree</option>
+      <option>Disagree</option>
+      <option>Neutral</option>
+      <option>Agree</option>
+      <option>Strongly Agree</option>
+    </select>
+
+<h3>Section 2: Organisational Culture</h3>
+
+<label>To what extent are relationships and mutual trust prioritised in your workplace?</label>
+<select name="trust">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>To what extent does your organisation demonstrate commitment to sustainability and global responsibility?</label>
+<select name="sustainability">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>How much emphasis is placed on innovation, creativity, and exploration in your workplace?</label>
+<select name="creativity">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>To what degree are fun and enjoyment seen as valuable aspects of workplace culture?</label>
+<select name="fun">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>How important is achieving goals and performance-driven success in your workplace?</label>
+<select name="goals">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>To what extent are decisiveness, bold leadership, and assertiveness valued in your organisation?</label>
+<select name="strength">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>How much importance is placed on careful planning, risk management, and preparedness?</label>
+<select name="planning">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>To what extent do shared norms, structure, and formal rules shape your workplace culture?</label>
+<select name="respect">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<h3>Section 3: Management Style</h3>
+
+<label>How much does your organisation rely on formal chains of command for decision-making?</label>
+<select name="formal_chain">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Completely</option>
+</select>
+
+<label>To what extent do strategic decisions originate from Tokyo HQ rather than local offices?</label>
+<select name="tokyo_decisions">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Completely</option>
+</select>
+
+<label>To what degree do you believe that INPEX and its subsidiaries function in siloed structures rather than as an integrated organisation?</label>
+<select name="silos">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Completely</option>
+</select>
+   
+    
+<h3>Section 4: Corporate Vision and Values</h3>
+
+<label>How clearly are you aware of the organisation’s vision and core values?</label>
+<select name="vision_awareness">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Clearly</option>
+  <option value="5">5 - Extremely clearly</option>
+</select>
+
+<label>To what degree do the organisation’s vision and values influence your day-to-day work?</label>
+<select name="vision_influence">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Fundamentally</option>
+</select>
+   
+<p>
+  In addition to this survey, I plan to carry out a selection of short interviews. 
+  If you would be happy to participate in this, please comment below and provide your email address.
+  <br><br>Many thanks,<br>Andrew
+</p>
+    <label for="comments">Comments (optional):</label>
+    <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments (optional)"></textarea>
+
+    <label for="email">Email (optional):</label>
+    <input type="email" id="email" name="email" placeholder="If you are open to a short follow-up interview, please provide your email address below (optional).">
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.href='https://andyb1984.github.io/survey/thankyou.html'; }"></iframe>
+
+  <script>
+    var submitted = false;
+
+    function toggleOtherField(selectEl, inputId) {
+      const input = document.getElementById(inputId);
+      if (selectEl.value === 'Other') {
+        input.classList.remove('hidden');
+      } else {
+        input.classList.add('hidden');
+      }
+    }
+
+    function prepareSubmission() {
+      const mappings = [
+        { selectId: 'role', otherId: 'role_other' },
+        { selectId: 'location', otherId: 'location_other' },
+        { selectId: 'nationality', otherId: 'nationality_other' }	
+      ];
+
+      mappings.forEach(({ selectId, otherId }) => {
+        const select = document.getElementById(selectId);
+        const other = document.getElementById(otherId);
+        if (select.value === 'Other' && other.value.trim() !== '') {
+          // Replace select value with custom input
+          const hiddenInput = document.createElement('input');
+          hiddenInput.type = 'hidden';
+          hiddenInput.name = select.name;
+          hiddenInput.value = other.value;
+          select.parentNode.appendChild(hiddenInput);
+          select.disabled = true;
+        }
+      });
+    }
+  </script>
+
+  <p>Thank you for your time completing this survey. If you have any thoughts, comments, or questions about this research please contact me at: <strong>Andrew.botsford@inpex.co.jp</strong></p>
+</div>
+</body>
+</html>
