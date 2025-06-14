@@ -75,7 +75,16 @@
   <li>Your participation is greatly appreciated and will contribute valuable insights to the research.</li>
 </ul>
 
-  <form action="https://script.google.com/macros/s/AKfycbx3BipP19YYEbbevN1yg-fK-gQVPm9zRyCTgZisuqDkm65xnhkXWxdLH-NKpkAOyyYQLw/exec" method="post" target="hidden_iframe" onsubmit="prepareSubmission(); submitted=true;">
+ 
+
+
+<form action="https://script.google.com/macros/s/AKfycbx3BipP19YYEbbevN1yg-fK-gQVPm9zRyCTgZisuqDkm65xnhkXWxdLH-NKpkAOyyYQLw/exec" 
+      method="post" 
+      target="hidden_iframe" 
+      onsubmit="prepareSubmission(); submitted = true; showSubmitMessage();"
+
+
+
 
     <h3>Section 1: Background Information</h3>
 
@@ -128,8 +137,8 @@
 
 <h3>Section 2: Organisational Culture</h3>
 
-<label>To what extent are relationships and mutual trust prioritised in your workplace?</label>
-<select name="trust">
+<label>How much emphasis is placed on innovation, creativity, and exploration in your workplace?</label>
+<select name="learning">
   <option value="">Select</option>
   <option value="1">1 - Not at all</option>
   <option value="2">2 - Slightly</option>
@@ -139,7 +148,7 @@
 </select>
 
 <label>To what extent does your organisation demonstrate commitment to sustainability and global responsibility?</label>
-<select name="sustainability">
+<select name="purpose">
   <option value="">Select</option>
   <option value="1">1 - Not at all</option>
   <option value="2">2 - Slightly</option>
@@ -148,48 +157,8 @@
   <option value="5">5 - Extremely</option>
 </select>
 
-<label>How much emphasis is placed on innovation, creativity, and exploration in your workplace?</label>
-<select name="creativity">
-  <option value="">Select</option>
-  <option value="1">1 - Not at all</option>
-  <option value="2">2 - Slightly</option>
-  <option value="3">3 - Moderately</option>
-  <option value="4">4 - Strongly</option>
-  <option value="5">5 - Extremely</option>
-</select>
-
-<label>To what degree are fun and enjoyment seen as valuable aspects of workplace culture?</label>
-<select name="fun">
-  <option value="">Select</option>
-  <option value="1">1 - Not at all</option>
-  <option value="2">2 - Slightly</option>
-  <option value="3">3 - Moderately</option>
-  <option value="4">4 - Strongly</option>
-  <option value="5">5 - Extremely</option>
-</select>
-
-<label>How important is achieving goals and performance-driven success in your workplace?</label>
-<select name="goals">
-  <option value="">Select</option>
-  <option value="1">1 - Not at all</option>
-  <option value="2">2 - Slightly</option>
-  <option value="3">3 - Moderately</option>
-  <option value="4">4 - Strongly</option>
-  <option value="5">5 - Extremely</option>
-</select>
-
-<label>To what extent are decisiveness, bold leadership, and assertiveness valued in your organisation?</label>
-<select name="strength">
-  <option value="">Select</option>
-  <option value="1">1 - Not at all</option>
-  <option value="2">2 - Slightly</option>
-  <option value="3">3 - Moderately</option>
-  <option value="4">4 - Strongly</option>
-  <option value="5">5 - Extremely</option>
-</select>
-
-<label>How much importance is placed on careful planning, risk management, and preparedness?</label>
-<select name="planning">
+<label>To what extent are relationships and mutual trust prioritised in your workplace?</label>
+<select name="caring">
   <option value="">Select</option>
   <option value="1">1 - Not at all</option>
   <option value="2">2 - Slightly</option>
@@ -199,7 +168,7 @@
 </select>
 
 <label>To what extent do structure and formal rules shape your workplace culture?</label>
-<select name="respect">
+<select name="order">
   <option value="">Select</option>
   <option value="1">1 - Not at all</option>
   <option value="2">2 - Slightly</option>
@@ -207,6 +176,47 @@
   <option value="4">4 - Strongly</option>
   <option value="5">5 - Extremely</option>
 </select>
+
+<label>How much importance is placed on careful planning, risk management, and preparedness?</label>
+<select name="safety">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>To what extent are decisiveness, bold leadership, and assertiveness valued in your organisation?</label>
+<select name="authority">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>How important is achieving goals and performance-driven success in your workplace?</label>
+<select name="results">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
+<label>To what degree are fun and enjoyment seen as valuable aspects of workplace culture?</label>
+<select name="enjoyment">
+  <option value="">Select</option>
+  <option value="1">1 - Not at all</option>
+  <option value="2">2 - Slightly</option>
+  <option value="3">3 - Moderately</option>
+  <option value="4">4 - Strongly</option>
+  <option value="5">5 - Extremely</option>
+</select>
+
 
 <h3>Section 3: Management Style</h3>
 
@@ -272,15 +282,54 @@
     <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments (optional)"></textarea>
 
     <label for="email">Email (optional):</label>
-    <input type="email" id="email" name="email" placeholder="If you are open to a short follow-up interview, please provide your email address below (optional).">
+    <input type="email" id="email" name="email" placeholder="If you are open to a short follow-up interview, please provide your email address.">
 
     <button type="submit">Submit</button>
+   
+<p id="submit-message" style="color: green; font-weight: bold; display: none;">
+  Submitted!<br>
+  <span style="color: black; font-weight: normal;">
+    Thank you for your time completing this survey. If you have any thoughts, comments, or questions about this research please contact me at: <strong>Andrew.botsford@inpex.co.jp</strong>
+  </span>
+</p>
+
+
   </form>
 
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.href='https://andyb1984.github.io/survey/thankyou.html'; }"></iframe>
+  
+
+
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="iframeLoaded()"></iframe>
+
+
+
+
+
 
   <script>
-    var submitted = false;
+    
+var submitted = false;
+
+
+
+function showSubmitMessage() {
+  document.getElementById('submit-message').style.display = 'block';
+  document.getElementById('thankyou-message').style.display = 'block';
+}
+
+
+
+
+function iframeLoaded() {
+  if (submitted) {
+    setTimeout(() => {
+      window.location.href = 'https://andyb1984.github.io/survey/thankyou.html';
+    }, 1000); // 1 second delay
+  }
+}
+
+
 
     function toggleOtherField(selectEl, inputId) {
       const input = document.getElementById(inputId);
@@ -314,7 +363,18 @@
     }
   </script>
 
-  <p>Thank you for your time completing this survey. If you have any thoughts, comments, or questions about this research please contact me at: <strong>Andrew.botsford@inpex.co.jp</strong></p>
+<script>
+  document.querySelector("form").addEventListener("submit", function () {
+    document.getElementById("submit-message").style.display = "block";
+  });
+</script>
+
+
+<p id="thankyou-message" style="display: none;">
+  Thank you for your time completing this survey. If you have any thoughts, comments, or questions about this research please contact me at: <strong>Andrew.botsford@inpex.co.jp</strong>
+</p>
+ 
+
 </div>
 </body>
 </html>
