@@ -1,83 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>INPEX Europe Survey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INPEX Survey</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px 10px;
+      font-family: sans-serif;
+      padding: 20px;
     }
     .container {
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto;
     }
-    label {
+    label, select, input {
       display: block;
-      margin: 8px 0 5px;
-      font-weight: normal; /* Unbold labels */
-    }
-    input, select, textarea, button {
       width: 100%;
-      padding: 10px;
       margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
+      padding: 8px;
+      font-size: 16px;
     }
     .hidden {
       display: none;
     }
+    #submit-message {
+      display: none;
+      color: green;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
-<div class="container">
-  <h1>INPEX Europe Office & Corporation Survey</h1>
-<p><a href="https://andyb1984.github.io/survey/index_jp.html">アンケートの日本語版はこちらをクリックしてください</a></p>
-  <!-- Survey Purpose (Dropdown) -->
-<details>
-  <summary><strong>Click here to read the purpose of this survey</strong></summary>
-  <p>
-    This survey is part of an academic study aimed at exploring the organisational culture, management style, and alignment with corporate vision and values within INPEX Europe and its relationship with INPEX Corporation. The research seeks to understand how employees across different roles, locations, and cultural backgrounds perceive and engage with the company’s strategic direction and workplace environment.
-  </p>
-  <p>
-    Specifically, the survey investigates:
-  </p>
-  <ul>
-    <li>Awareness and influence of INPEX’s vision and core values on employees’ daily work.</li>
-    <li>Perceptions of organisational culture, using Groysberg et al.’s (2018) framework of eight cultural styles (e.g., caring, purpose, learning, enjoyment, results, authority, safety, and order).</li>
-    <li>Differences in perception based on role seniority, tenure, expatriate status, and nationality.</li>
-    <li>The degree of autonomy perceived in decision-making processes, particularly between the Tokyo HQ and its subsidiaries.</li>
-    <li>Cultural classification of the London office and how it aligns with or diverges from the broader corporate culture.</li>
-  </ul>
-  <p>
-    The findings aim to provide insights into how effectively INPEX’s corporate values are communicated and embodied across its international offices, and how this alignment may relate to employee satisfaction and retention.
-  </p>
-</details>
-
-<br>
-
-<!-- Survey Participation Agreement -->
-<h2>Survey Participation Agreement</h2>
-<ul>
-  <li>By completing this survey, you agree to have your responses included in an academic study investigating the relationship between the INPEX Europe office and INPEX Corporation.</li>
-  <li>Your entries will be treated anonymously, but please bear in mind that due to a small sample size of respondents, absolute anonymity cannot be guaranteed.</li>
-  <li>You can choose whether to answer any questions; do not feel obliged to answer all and only answer those you are comfortable with.</li>
-  <li>Your participation is greatly appreciated and will contribute valuable insights to the research.</li>
-</ul>
-
- 
-
-
+  <div class="container">
+    <h1>INPEX Europe Survey</h1>
 <form action="https://script.google.com/macros/s/AKfycbx3BipP19YYEbbevN1yg-fK-gQVPm9zRyCTgZisuqDkm65xnhkXWxdLH-NKpkAOyyYQLw/exec" 
       method="post" 
       target="hidden_iframe" 
@@ -294,92 +249,54 @@
 </p>
 
 
-  </form>
-
-  
+  </form>    
 
 
-
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="iframeLoaded()"></iframe>
-
-
-
-
-
+  </div>
 
   <script>
-    
-var submitted = false;
+    // Google Apps Script Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzyPbCNF8Ftu2uGLXOt6vN56cY3GJvfpbWBlmm8-9bfZOfwLyFVdM8J9GHUO1B4wWqg/exec';
 
+    const form = document.getElementById("survey-form");
 
+    // Handle "Other" selections
+    document.getElementById("role").addEventListener("change", function () {
+      const otherField = document.getElementById("role_other");
+      otherField.classList.toggle("hidden", this.value !== "Other");
+    });
 
-function showSubmitMessage() {
-  document.getElementById('submit-message').style.display = 'block';
-  document.getElementById('thankyou-message').style.display = 'block';
-}
+    document.getElementById("location").addEventListener("change", function () {
+      const otherField = document.getElementById("location_other");
+      otherField.classList.toggle("hidden", this.value !== "Other");
+    });
 
+    // Submission handler
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
 
+      const formData = new FormData(form);
 
-
-function iframeLoaded() {
-  if (submitted) {
-    setTimeout(() => {
-      window.location.href = 'https://andyb1984.github.io/survey/thankyou.html';
-    }, 1000); // 1 second delay
-  }
-}
-
-
-
-    function toggleOtherField(selectEl, inputId) {
-      const input = document.getElementById(inputId);
-      if (selectEl.value === 'Other') {
-        input.classList.remove('hidden');
-      } else {
-        input.classList.add('hidden');
+      // If "Other" is selected, replace main field with the value
+      if (formData.get("role") === "Other") {
+        formData.set("role", formData.get("role_other"));
       }
-    }
+      if (formData.get("location") === "Other") {
+        formData.set("location", formData.get("location_other"));
+      }
 
-    function prepareSubmission() {
-      const mappings = [
-        { selectId: 'role', otherId: 'role_other' },
-        { selectId: 'location', otherId: 'location_other' },
-        { selectId: 'nationality', otherId: 'nationality_other' }	
-      ];
+      try {
+        await fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' });
 
-      mappings.forEach(({ selectId, otherId }) => {
-        const select = document.getElementById(selectId);
-        const other = document.getElementById(otherId);
-        if (select.value === 'Other' && other.value.trim() !== '') {
-          // Replace select value with custom input
-          const hiddenInput = document.createElement('input');
-          hiddenInput.type = 'hidden';
-          hiddenInput.name = select.name;
-          hiddenInput.value = other.value;
-          select.parentNode.appendChild(hiddenInput);
-          select.disabled = true;
-        }
-      });
-    }
+        document.getElementById("submit-message").style.display = "block";
+
+        setTimeout(() => {
+          window.location.href = "https://andyb1984.github.io/survey/thankyou.html";
+        }, 1000);
+      } catch (error) {
+        alert("There was a problem submitting the form. Please try again.");
+      }
+    });
   </script>
-
-<script>
-  document.querySelector("form").addEventListener("submit", function () {
-    document.getElementById("submit-message").style.display = "block";
-  });
-</script>
-<script>
-  const user = "Andrew.botsford";
-  const domain = "inpex.co.jp";
-  document.write(`<a href="mailto:${user}@${domain}">${user}@${domain}</a>`);
-</script>
-
-
-<p id="thankyou-message" style="display: none;">
-  Thank you for your time completing this survey. If you have any thoughts, comments, or questions about this research please contact me at: <strong>Andrew.botsford@inpex.co.jp</strong>
-</p>
- 
-
-</div>
 </body>
 </html>
