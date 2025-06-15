@@ -1,44 +1,38 @@
+
 <!DOCTYPE html>
-<html lang="jp">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>INPEXヨーロッパ調査</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px 10px;
+      font-family: sans-serif;
+      padding: 20px;
     }
     .container {
-      max-width: 700px;
+      max-width: 600px;
       margin: 0 auto;
     }
-    label {
+    label, select, input {
       display: block;
-      margin: 8px 0 5px;
-      font-weight: normal; /* Unbold labels */
-    }
-    input, select, textarea, button {
       width: 100%;
-      padding: 10px;
       margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      background-color: #007bff;
-      color: white;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #0056b3;
+      padding: 8px;
+      font-size: 16px;
     }
     .hidden {
       display: none;
     }
+    #submit-message {
+      display: none;
+      color: green;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
+
 <div class="container">
   <h1>INPEXヨーロッパオフィス＆コーポレーション調査</h1>
 <p><a href="https://andyb1984.github.io/survey/index.html">Click here for the English version of the survey</a></p>
@@ -74,252 +68,264 @@
   <li>ご協力に心より感謝申し上げます。皆様のご意見は本研究にとって非常に貴重です。</li>
 </ul>
 
-<form action="https://script.google.com/macros/s/AKfycbz7Z7B6KOzB0mFyofLDeWV6AqAR3lXoQXHz4Dysn6KOcHz-ZZUJEkTfYud1VZlcI2OcgA/exec" method="post" target="hidden_iframe" onsubmit="prepareSubmission(); submitted=true;">
+<form action="https://script.google.com/macros/s/AKfycbx3BipP19YYEbbevN1yg-fK-gQVPm9zRyCTgZisuqDkm65xnhkXWxdLH-NKpkAOyyYQLw/exec" 
+      method="post" 
+      target="hidden_iframe" 
+      onsubmit="prepareSubmission(); submitted = true; showSubmitMessage();">
 
-  <h3>セクション1：基本情報</h3>
+<h3>セクション 1：基本情報</h3>
 
-  <label for="role">あなたの社内での役職は何ですか？</label>
-  <select id="role" name="role" onchange="toggleOtherField(this, 'role_other')">
-    <option value="">選択してください</option>
-    <option>上級管理職（例：VP、CEO、CFO、ディレクター）</option>
-    <option>中間管理職（例：マネージャー）</option>
-    <option>専門職（例：技術職、財務職）</option>
-    <option>サポート職（例：秘書、オフィスアシスタント）</option>
-    <option>その他</option>
-  </select>
-  <input type="text" id="role_other" class="hidden" placeholder="役職を入力してください" />
+<label for="role">あなたの社内での役職は何ですか？</label>
+<select id="role" name="role" onchange="toggleOtherField(this, 'role_other')">
+  <option value="">選択してください</option>
+  <option>上級管理職（例：副社長、CEO、CFO、ディレクター）</option>
+  <option>中間管理職（例：マネージャー）</option>
+  <option>機能部門スタッフ（例：技術職、財務職）</option>
+  <option>サポートスタッフ（例：秘書、事務補助）</option>
+  <option>その他</option>
+</select>
+<input type="text" id="role_other" class="hidden" placeholder="役職を記入してください" />
 
-  <label for="tenure">勤務年数を教えてください。</label>
-  <select id="tenure" name="tenure">
-    <option value="">選択してください</option>
-    <option>1年未満</option>
-    <option>1〜2年</option>
-    <option>3〜5年</option>
-    <option>6〜10年</option>
-    <option>10年以上</option>
-  </select>
-
-  <label for="expat">あなたは駐在員ですか？それとも現地採用社員ですか？</label>
-  <select id="expat" name="expat">
-    <option value="">選択してください</option>
-    <option>駐在員</option>
-    <option>現地採用社員</option>
-  </select>
-
-  <label for="location">勤務地はどこですか？</label>
-  <select id="location" name="location" onchange="toggleOtherField(this, 'location_other')">
-    <option value="">選択してください</option>
-    <option>ロンドンオフィス</option>
-    <option>東京本社</option>
-    <option>その他</option>
-  </select>
-  <input type="text" id="location_other" class="hidden" placeholder="勤務地を入力してください" />
-
-  <label for="nationality">あなたの国籍は何ですか？</label>
-  <select id="nationality" name="nationality" onchange="toggleOtherField(this, 'nationality_other')">
-    <option value="">選択してください</option>
-    <option>日本</option>
-    <option>オーストラリア</option>
-    <option>インドネシア</option>
-    <option>ノルウェー</option>
-    <option>イギリス（英国）</option>
-    <option>その他</option>
-  </select>
-  <input type="text" id="nationality_other" class="hidden" placeholder="国籍を入力してください" />
-
-  <label for="stay">今後2年間、会社に在籍している可能性はどのくらいありますか？</label>
-  <select id="stay" name="stay">
-    <option value="">選択してください</option>
-    <option>非常に低い</option>
-    <option>低い</option>
-    <option>どちらともいえない</option>
-    <option>高い</option>
-    <option>非常に高い</option>
-  </select>
-
-
-<h3>セクション2：組織文化</h3>
-
-<label>職場では人間関係と相互の信頼がどの程度重視されていますか？</label>
-<select name="trust">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く重視されていない</option>
-  <option value="2">2 - わずかに重視されている</option>
-  <option value="3">3 - ある程度重視されている</option>
-  <option value="4">4 - 強く重視されている</option>
-  <option value="5">5 - 非常に重視されている</option>
+<label for="tenure">現在の会社での勤務年数はどのくらいですか？</label>
+<select id="tenure" name="tenure">
+  <option value="">選択してください</option>
+  <option>1年未満</option>
+  <option>1〜2年</option>
+  <option>3〜5年</option>
+  <option>6〜10年</option>
+  <option>10年以上</option>
 </select>
 
-<label>貴社は持続可能性と国際的責任にどの程度取り組んでいますか？</label>
-<select name="sustainability">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く取り組んでいない</option>
-  <option value="2">2 - わずかに取り組んでいる</option>
-  <option value="3">3 - ある程度取り組んでいる</option>
-  <option value="4">4 - 強く取り組んでいる</option>
-  <option value="5">5 - 非常に積極的に取り組んでいる</option>
+<label for="expat">あなたは駐在員ですか？それとも現地採用ですか？</label>
+<select id="expat" name="expat">
+  <option value="">選択してください</option>
+  <option>駐在員</option>
+  <option>現地社員</option>
 </select>
 
-<label>職場ではイノベーション、創造性、探求がどの程度重視されていますか？</label>
-<select name="creativity">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く重視されていない</option>
-  <option value="2">2 - わずかに重視されている</option>
-  <option value="3">3 - ある程度重視されている</option>
-  <option value="4">4 - 強く重視されている</option>
-  <option value="5">5 - 非常に重視されている</option>
+<label for="location">勤務地はどこですか？</label>
+<select id="location" name="location" onchange="toggleOtherField(this, 'location_other')">
+  <option value="">選択してください</option>
+  <option>ロンドンオフィス</option>
+  <option>東京本社（HQ）</option>
+  <option>その他</option>
+</select>
+<input type="text" id="location_other" class="hidden" placeholder="勤務地を記入してください" />
+
+<label for="stay">現在のIEL/INPEXでの役職が長期的なキャリアの成長と発展にどの程度貢献していると感じますか？</label>
+<select id="stay" name="stay">
+  <option value="">選択してください</option>
+  <option>全くそう思わない</option>
+  <option>あまりそう思わない</option>
+  <option>どちらともいえない</option>
+  <option>そう思う</option>
+  <option>強くそう思う</option>
 </select>
 
-<label>職場文化において楽しさや喜びはどの程度価値あるものとされていますか？</label>
-<select name="fun">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く価値がない</option>
-  <option value="2">2 - わずかに価値がある</option>
-  <option value="3">3 - ある程度価値がある</option>
-  <option value="4">4 - 高く評価されている</option>
-  <option value="5">5 - 非常に高く評価されている</option>
+<h3>セクション 2：組織文化</h3>
+
+<label>職場ではイノベーション、創造性、探究心がどの程度重視されていますか？</label>
+<select name="learning">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く重視されていない</option>
+  <option value="2">2 - あまり重視されていない</option>
+  <option value="3">3 - ある程度重視されている</option>
+  <option value="4">4 - 重視されている</option>
+  <option value="5">5 - 非常に重視されている</option>
 </select>
 
-<label>職場では目標達成や成果重視の成功がどの程度重要視されていますか？</label>
-<select name="goals">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く重要視されていない</option>
-  <option value="2">2 - わずかに重要視されている</option>
-  <option value="3">3 - ある程度重要視されている</option>
-  <option value="4">4 - 強く重要視されている</option>
-  <option value="5">5 - 非常に重要視されている</option>
+<label>御社は持続可能性や国際的責任にどの程度取り組んでいますか？</label>
+<select name="purpose">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く取り組んでいない</option>
+  <option value="2">2 - あまり取り組んでいない</option>
+  <option value="3">3 - ある程度取り組んでいる</option>
+  <option value="4">4 - 取り組んでいる</option>
+  <option value="5">5 - 非常に積極的に取り組んでいる</option>
 </select>
 
-<label>貴社では決断力、大胆なリーダーシップ、自己主張がどの程度評価されていますか？</label>
-<select name="strength">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く評価されていない</option>
-  <option value="2">2 - わずかに評価されている</option>
-  <option value="3">3 - ある程度評価されている</option>
-  <option value="4">4 - 高く評価されている</option>
-  <option value="5">5 - 非常に高く評価されている</option>
+<label>職場では人間関係や相互の信頼がどの程度重視されていますか？</label>
+<select name="caring">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く重視されていない</option>
+  <option value="2">2 - あまり重視されていない</option>
+  <option value="3">3 - ある程度重視されている</option>
+  <option value="4">4 - 重視されている</option>
+  <option value="5">5 - 非常に重視されている</option>
 </select>
 
-<label>慎重な計画、リスク管理、備えはどの程度重視されていますか？</label>
-<select name="planning">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く重視されていない</option>
-  <option value="2">2 - わずかに重視されている</option>
-  <option value="3">3 - ある程度重視されている</option>
-  <option value="4">4 - 強く重視されている</option>
-  <option value="5">5 - 非常に重視されている</option>
+<label>職場文化において構造や規則はどの程度影響を与えていますか？</label>
+<select name="order">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く影響していない</option>
+  <option value="2">2 - あまり影響していない</option>
+  <option value="3">3 - ある程度影響している</option>
+  <option value="4">4 - 影響している</option>
+  <option value="5">5 - 非常に影響している</option>
 </select>
 
-<label>共通の規範、構造、正式なルールは職場文化にどの程度影響していますか？</label>
-<select name="respect">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く影響していない</option>
-  <option value="2">2 - わずかに影響している</option>
-  <option value="3">3 - ある程度影響している</option>
-  <option value="4">4 - 強く影響している</option>
-  <option value="5">5 - 非常に強く影響している</option>
+<label>計画性、リスク管理、準備にどの程度重点が置かれていますか？</label>
+<select name="safety">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く重視されていない</option>
+  <option value="2">2 - あまり重視されていない</option>
+  <option value="3">3 - ある程度重視されている</option>
+  <option value="4">4 - 重視されている</option>
+  <option value="5">5 - 非常に重視されている</option>
 </select>
 
-<h3>セクション3：マネジメントスタイル</h3>
+<label>決断力、大胆なリーダーシップ、積極性はどの程度評価されていますか？</label>
+<select name="authority">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く評価されていない</option>
+  <option value="2">2 - あまり評価されていない</option>
+  <option value="3">3 - ある程度評価されている</option>
+  <option value="4">4 - 評価されている</option>
+  <option value="5">5 - 非常に評価されている</option>
+</select>
 
-<label>意思決定において正式な指揮系統にどの程度依存していますか？</label>
+<label>職場では目標達成や成果主義がどの程度重視されていますか？</label>
+<select name="results">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く重視されていない</option>
+  <option value="2">2 - あまり重視されていない</option>
+  <option value="3">3 - ある程度重視されている</option>
+  <option value="4">4 - 重視されている</option>
+  <option value="5">5 - 非常に重視されている</option>
+</select>
+
+<label>職場文化において楽しさや喜びはどの程度大切にされていますか？</label>
+<select name="enjoyment">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く大切にされていない</option>
+  <option value="2">2 - あまり大切にされていない</option>
+  <option value="3">3 - ある程度大切にされている</option>
+  <option value="4">4 - 大切にされている</option>
+  <option value="5">5 - 非常に大切にされている</option>
+</select>
+
+<h3>セクション 3：マネジメントスタイル</h3>
+
+<label>意思決定において正式な指揮系統がどの程度重視されていますか？</label>
 <select name="formal_chain">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く依存していない</option>
-  <option value="2">2 - わずかに依存している</option>
-  <option value="3">3 - ある程度依存している</option>
-  <option value="4">4 - 強く依存している</option>
-  <option value="5">5 - 完全に依存している</option>
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く重視されていない</option>
+  <option value="2">2 - あまり重視されていない</option>
+  <option value="3">3 - ある程度重視されている</option>
+  <option value="4">4 - 重視されている</option>
+  <option value="5">5 - 完全に重視されている</option>
 </select>
 
 <label>戦略的な意思決定は、どの程度東京本社から発信されていますか？</label>
 <select name="tokyo_decisions">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く発信されていない</option>
-  <option value="2">2 - わずかに発信されている</option>
-  <option value="3">3 - ある程度発信されている</option>
-  <option value="4">4 - 多くが発信されている</option>
-  <option value="5">5 - 完全に発信されている</option>
+  <option value="">選択してください</option>
+  <option value="1">1 - 全くそうではない</option>
+  <option value="2">2 - あまりそうではない</option>
+  <option value="3">3 - ある程度そうである</option>
+  <option value="4">4 - そうである</option>
+  <option value="5">5 - 完全にそうである</option>
 </select>
-   
-    
-<h3>セクション4：企業ビジョンと価値観</h3>
 
-<label>企業のビジョンとコアバリューをどの程度明確に認識していますか？</label>
+<label>INPEXおよびその子会社は、統合された組織というよりも縦割り構造で運営されていると感じますか？</label>
+<select name="silos">
+  <option value="">選択してください</option>
+  <option value="1">1 - 全くそう思わない</option>
+  <option value="2">2 - あまりそう思わない</option>
+  <option value="3">3 - ある程度そう思う</option>
+  <option value="4">4 - そう思う</option>
+  <option value="5">5 - 強くそう思う</option>
+</select>
+
+<h3>セクション 4：企業ビジョンと価値観</h3>
+
+<label>企業のビジョンとコアバリューをどの程度明確に理解していますか？</label>
 <select name="vision_awareness">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く認識していない</option>
-  <option value="2">2 - わずかに認識している</option>
-  <option value="3">3 - ある程度認識している</option>
-  <option value="4">4 - 明確に認識している</option>
-  <option value="5">5 - 非常に明確に認識している</option>
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く理解していない</option>
+  <option value="2">2 - あまり理解していない</option>
+  <option value="3">3 - ある程度理解している</option>
+  <option value="4">4 - 理解している</option>
+  <option value="5">5 - 非常に明確に理解している</option>
 </select>
 
-<label>企業のビジョンと価値観は、あなたの日々の業務にどの程度影響を与えていますか？</label>
+<label>企業のビジョンと価値観が、日々の業務にどの程度影響を与えていますか？</label>
 <select name="vision_influence">
-  <option value="">選択してください</option>
-  <option value="1">1 - 全く影響していない</option>
-  <option value="2">2 - わずかに影響している</option>
-  <option value="3">3 - ある程度影響している</option>
-  <option value="4">4 - 強く影響している</option>
-  <option value="5">5 - 根本的に影響している</option>
+  <option value="">選択してください</option>
+  <option value="1">1 - 全く影響していない</option>
+  <option value="2">2 - あまり影響していない</option>
+  <option value="3">3 - ある程度影響している</option>
+  <option value="4">4 - 影響している</option>
+  <option value="5">5 - 根本的に影響している</option>
 </select>
-
 
 <p>
- このアンケートに加えて、いくつかの短いインタビューを実施する予定です。<br>
-ご参加いただける場合は、下にコメントし、メールアドレスをご記入ください。
-  <br><br>ご協力ありがとうございます。<br>アンドリュー
+  このアンケートに加えて、短いインタビューも実施する予定です。<br>
+  ご協力いただける場合は、以下にコメントとメールアドレスをご記入ください。
+  <br><br>ご協力ありがとうございます。<br>アンドリュー
 </p>
-
-<label for="comments">コメント（任意）:</label>
+<label for="comments">コメント（任意）：</label>
 <textarea id="comments" name="comments" rows="4" placeholder="コメントをご記入ください（任意）"></textarea>
 
-<label for="email">メールアドレス（任意）:</label>
-<input type="email" id="email" name="email" placeholder="メールアドレスを入力してください（任意）">
+<label for="email">メールアドレス（任意）：</label>
+<input type="email" id="email" name="email" placeholder="短いインタビューにご協力いただける場合は、メールアドレスをご記入ください。">
 
 <button type="submit">送信</button>
-</form>
 
-  <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) { window.location.href='https://andyb1984.github.io/survey/thankyou.html'; }"></iframe>
+<p id="submit-message" style="color: green; font-weight: bold; display: none;">
+  送信されました！<br>
+  <span style="color: black; font-weight: normal;">
+    アンケートへのご協力、誠にありがとうございました。ご意見やご質問がある場合は、<strong>Andrew.botsford@inpex.co.jp</strong> までご連絡ください。
+  </span>
+</p>
+ 
+</form>    
+
+
+  </div>
 
   <script>
-    var submitted = false;
+    // Google Apps Script Web App URL
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzyPbCNF8Ftu2uGLXOt6vN56cY3GJvfpbWBlmm8-9bfZOfwLyFVdM8J9GHUO1B4wWqg/exec';
 
-    function toggleOtherField(selectEl, inputId) {
-      const input = document.getElementById(inputId);
-      if (selectEl.value === 'Other') {
-        input.classList.remove('hidden');
-      } else {
-        input.classList.add('hidden');
+    const form = document.getElementById("survey-form");
+
+    // Handle "Other" selections
+    document.getElementById("role").addEventListener("change", function () {
+      const otherField = document.getElementById("role_other");
+      otherField.classList.toggle("hidden", this.value !== "Other");
+    });
+
+    document.getElementById("location").addEventListener("change", function () {
+      const otherField = document.getElementById("location_other");
+      otherField.classList.toggle("hidden", this.value !== "Other");
+    });
+
+    // Submission handler
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      // If "Other" is selected, replace main field with the value
+      if (formData.get("role") === "Other") {
+        formData.set("role", formData.get("role_other"));
       }
-    }
+      if (formData.get("location") === "Other") {
+        formData.set("location", formData.get("location_other"));
+      }
 
-    function prepareSubmission() {
-      const mappings = [
-        { selectId: 'role', otherId: 'role_other' },
-        { selectId: 'location', otherId: 'location_other' },
-        { selectId: 'nationality', otherId: 'nationality_other' }
-      ];
+      try {
+        await fetch(scriptURL, { method: 'POST', body: formData, mode: 'no-cors' });
 
-      mappings.forEach(({ selectId, otherId }) => {
-        const select = document.getElementById(selectId);
-        const other = document.getElementById(otherId);
-        if (select.value === 'Other' && other.value.trim() !== '') {
-          // Replace select value with custom input
-          const hiddenInput = document.createElement('input');
-          hiddenInput.type = 'hidden';
-          hiddenInput.name = select.name;
-          hiddenInput.value = other.value;
-          select.parentNode.appendChild(hiddenInput);
-          select.disabled = true;
-        }
-      });
-    }
+        document.getElementById("submit-message").style.display = "block";
+
+        setTimeout(() => {
+          window.location.href = "https://andyb1984.github.io/survey/thankyou.html";
+        }, 1000);
+      } catch (error) {
+        alert("There was a problem submitting the form. Please try again.");
+      }
+    });
   </script>
-
-<p>このアンケートにご協力いただき、ありがとうございました。
-この研究に関してご意見、ご感想、ご質問などがありましたら、以下の連絡先までご連絡ください：<strong>Andrew.botsford@inpex.co.jp</strong></p>
-</div>
 </body>
 </html>
