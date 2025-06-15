@@ -81,7 +81,7 @@
 <form action="https://script.google.com/macros/s/AKfycbx3BipP19YYEbbevN1yg-fK-gQVPm9zRyCTgZisuqDkm65xnhkXWxdLH-NKpkAOyyYQLw/exec" 
       method="post" 
       target="hidden_iframe" 
-      onsubmit="prepareSubmission(); submitted = true; showSubmitMessage();"
+      onsubmit="prepareSubmission(); submitted = true; showSubmitMessage();">
 
 
 
@@ -367,6 +367,11 @@ function iframeLoaded() {
   document.querySelector("form").addEventListener("submit", function () {
     document.getElementById("submit-message").style.display = "block";
   });
+</script>
+<script>
+  const user = "Andrew.botsford";
+  const domain = "inpex.co.jp";
+  document.write(`<a href="mailto:${user}@${domain}">${user}@${domain}</a>`);
 </script>
 
 
