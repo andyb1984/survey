@@ -115,12 +115,14 @@
 <label for="stay">現在のIEL/INPEXでの役職が長期的なキャリアの成長と発展にどの程度貢献していると感じますか？</label>
 <select id="stay" name="stay">
   <option value="">選択してください</option>
-  <option>全くそう思わない</option>
-  <option>あまりそう思わない</option>
-  <option>どちらともいえない</option>
-  <option>そう思う</option>
-  <option>強くそう思う</option>
+  <option value="1">1 - 全く影響していない</option>
+  <option value="2">2 - あまり影響していない</option>
+  <option value="3">3 - ある程度影響している</option>
+  <option value="4">4 - 影響している</option>
+  <option value="5">5 - 根本的に影響している</option>
 </select>
+
+
 
 <h3>セクション 2：組織文化</h3>
 
@@ -264,7 +266,7 @@
   <br><br>ご協力ありがとうございます。<br>アンドリュー
 </p>
 <label for="comments">コメント（任意）：</label>
-<textarea id="comments" name="comments" rows="4" placeholder="コメントをご記入ください（任意）"></textarea>
+<textarea id="comments" name="comments" rows="4" style="width: 100%; padding: 8px; font-size: 16px;" placeholder="コメントをご記入ください（任意）"></textarea>
 
 <label for="email">メールアドレス（任意）：</label>
 <input type="email" id="email" name="email" placeholder="短いインタビューにご協力いただける場合は、メールアドレスをご記入ください。">
